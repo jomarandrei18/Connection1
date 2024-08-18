@@ -1,0 +1,99 @@
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Connection1.exe.config
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Connection1.exe
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Connection1.pdb
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\EntityFramework.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Google.Protobuf.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\MySql.Data.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Buffers.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.IO.Pipelines.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Memory.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\ZstdSharp.dll
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\EntityFramework.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Google.Protobuf.pdb
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Google.Protobuf.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\MySql.Data.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Buffers.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.IO.Pipelines.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Memory.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.csproj.AssemblyReference.cache
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.Menu.resources
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.Properties.Resources.resources
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.csproj.GenerateResource.cache
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.csproj.CoreCompileInputs.cache
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connecti.F4AA42DA.Up2Date
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.exe
+C:\Users\7352710\Documents\TestAngular\API\Connection1\Connection1\obj\Debug\Connection1.pdb
+F:\From Downloads\Connection1\Connection1\bin\Debug\Connection1.exe.config
+F:\From Downloads\Connection1\Connection1\bin\Debug\Connection1.exe
+F:\From Downloads\Connection1\Connection1\bin\Debug\Connection1.pdb
+F:\From Downloads\Connection1\Connection1\bin\Debug\BouncyCastle.Cryptography.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\EntityFramework.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\EntityFramework.SqlServer.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\Google.Protobuf.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Hash.xxHash.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\MySql.Data.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\MySql.Data.EntityFramework.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Buffers.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.IO.Pipelines.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Memory.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Numerics.Vectors.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Threading.Tasks.Extensions.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\ZstdSharp.dll
+F:\From Downloads\Connection1\Connection1\bin\Debug\BouncyCastle.Cryptography.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\EntityFramework.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\EntityFramework.SqlServer.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\Google.Protobuf.pdb
+F:\From Downloads\Connection1\Connection1\bin\Debug\Google.Protobuf.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Compression.LZ4.Streams.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\K4os.Hash.xxHash.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\MySql.Data.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\MySql.Data.EntityFramework.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Buffers.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.IO.Pipelines.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Memory.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Numerics.Vectors.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\From Downloads\Connection1\Connection1\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.csproj.AssemblyReference.cache
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.csproj.SuggestedBindingRedirects.cache
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.Menu.resources
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.Properties.Resources.resources
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.csproj.GenerateResource.cache
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.csproj.CoreCompileInputs.cache
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.csproj.CopyComplete
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.exe
+F:\From Downloads\Connection1\Connection1\obj\Debug\Connection1.pdb
