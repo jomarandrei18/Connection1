@@ -3,6 +3,7 @@ using Connection1.Service;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,8 +48,13 @@ namespace Connection1.Class
             _currentWindowSize -= _buttonSize.x;
 
             return button;
-        }      
-        
+        }
+
+        private Button CreateButton(ButtonConfig buttonConfig, int pointX)
+        {
+            return _buttonService.CreateButton(buttonConfig, pointX, 900);
+        }
+
         private void PositionButton(Button button)
         {
             if(_currentWindowSize < _buttonSize.x)
@@ -115,6 +121,21 @@ namespace Connection1.Class
             _buttonSize.y = newValueY;
             _buttonSize.x = _constantX;
             _column = 1;
+        }
+        public Button RedesignPricePanelButton(ButtonConfig _buttonConfig, int sizeW, int pointX, Color foreColor, Color backColore, string text)
+        {
+            Button button = CreateButton(_buttonConfig, pointX);
+            button.Size = new Size(sizeW, 56);
+            MouseLeavePriceButton(button, foreColor, backColore);
+            button.Text = text;
+
+            return button;
+        }
+
+        public void MouseLeavePriceButton(Button button, Color foreColor, Color backColore)
+        {
+            button.BackColor = backColore;
+            button.ForeColor = foreColor;
         }
 
     }

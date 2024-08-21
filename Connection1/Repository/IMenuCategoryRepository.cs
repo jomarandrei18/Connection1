@@ -11,5 +11,7 @@ namespace Connection1.Repository
     {
         IQueryable<MenuCategory> GetMenuCategories();
         IQueryable<Product> GetProduct(int Id);
+        void AddMenuCategory(List<Order> orders);
+        int CountOrderToday();
     }
 }

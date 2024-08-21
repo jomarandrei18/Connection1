@@ -18,6 +18,7 @@ namespace Connection1.Connection
         }
         public DbSet<MenuCategory> menucategories { get; set; }
         public DbSet<Product> productlist { get; set; }
+        public DbSet<Order> orders { get; set; }
 
         
     }

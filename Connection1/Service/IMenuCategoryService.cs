@@ -11,5 +11,7 @@ namespace Connection1.Service
     {
         List<MenuCategory> GetPagedMenuCategories();
         List<Product> GetProductList(int Id);
+        void AddMenuCategory(List<Order> orders);
+        int CountOrderToday();
     }
 }

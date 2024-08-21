@@ -27,29 +27,50 @@ namespace Connection1.Class
         private Panel _orderPanel;
         private Panel ClickOrderPanel;
         private Label deleteLabel;
+        private Label _subtotal;
         private MenuValidation _validation;
 
-        public CreatePanelOrder(IImageService imageService, List<OrderList> orderList, MenuValidation validation, Panel orderPanel)
+        public CreatePanelOrder(
+            IImageService imageService, 
+            List<OrderList> orderList, 
+            MenuValidation validation,
+            Panel orderPanel, 
+            Label subtotal)
         {
             _imageService = imageService;
             _orderList = orderList;
             _validation = validation;
             _orderPanel = orderPanel;
+            _subtotal = subtotal;
             InitializeTimer();
         }
 
         public void CreatePanel()
         {
             var list = _orderList[_orderList.Count - 1];
-            Panel lastPanel = _orderPanel.Controls.OfType<Panel>().LastOrDefault();
+            CreateOrderPanel(list);
+        }
 
+        public void CreateOrderOnHoldPanel(List<OrderList> orderList)
+        {
+            _orderList = orderList;
+            foreach (var list in _orderList)
+            {
+                CreateOrderPanel(list);
+            }
+        }
+
+        private void CreateOrderPanel(OrderList list)
+        {
+            Panel lastPanel = _orderPanel.Controls.OfType<Panel>().LastOrDefault();
             OrderPanelList = new Panel
             {
                 Size = new Size(_orderPanel.Width - 3 * Margin, 70 - Margin),
                 Location = lastPanel == null
-                ? new Point(Margin - 5, Margin)
+                ? new Point(Margin - 5, Margin + 20)
                 : new Point(Margin - 5, lastPanel.Bottom + Margin),
                 Tag = list.Id
+
             };
 
             string price = list.Price.ToString("C", new CultureInfo("en-PH"));
@@ -145,7 +166,7 @@ namespace Connection1.Class
         {
             _animationTimer = new Timer
             {
-                Interval = 10 
+                Interval = 3
             };
             _animationTimer.Tick += AnimationTimer_Tick;
         }
@@ -204,6 +225,8 @@ namespace Connection1.Class
                 panelList.orderPanel.Top = top;
                 top += 70;
             }
+
+            _subtotal.Text = GetTotalPrice();
         }
         private OrderPanelControls GetPanelTag(int TagId)
         {
@@ -223,11 +246,14 @@ namespace Connection1.Class
         {
             var getOrderPanelControls = GetPanelTag((int)picBox.Tag);
 
+            var list = _orderList.Find(p => p.Id ==  getOrderPanelControls.TagId);
             string currentText = getOrderPanelControls.productQty.Text;
             if (int.TryParse(currentText, out int currentQty))
             {
                 currentQty = con? currentQty + 1 : _validation.CheckNoLessZero(currentQty);
+                list.Quantity = currentQty;
                 getOrderPanelControls.productQty.Text = currentQty.ToString();
+                _subtotal.Text = GetTotalPrice();
                 return;
             }
         }
@@ -242,15 +268,16 @@ namespace Connection1.Class
                     break;
                 }
             }
+
+            _subtotal.Text = GetTotalPrice();
         }
-        public void UpdateLabelQuantity(int Id, int qty)
+        private void UpdateLabelQuantity(int Id, int qty)
         {
             if (_orderLabels.TryGetValue(Id, out Label label))
             {
                 label.Text = qty.ToString();
             }
         }
-
         private int clickedPanel = 0;
         private void ClickControlsFunction(OrderPanelControls panelControls)
         {
@@ -300,6 +327,30 @@ namespace Connection1.Class
             getOrderPanelList.deletePanel.Visible = true;
             ClickOrderPanel = getOrderPanelList.orderPanel;
             _animationTimer.Start();
+        }
+        public string GetTotalPrice()
+        {
+            decimal orderTotal = 0;
+            foreach (var order in _orderList)
+            {
+                orderTotal += order.Price * order.Quantity;
+            }
+            return orderTotal.ToString("C", new CultureInfo("en-PH"));
+        }
+
+        public void ClearOrderListPanel(bool con = false)
+        {
+            //Put a confirmation message --------------------------------
+            foreach (var orderPanel in _orderPanelControlsList)
+            {
+                _orderPanel.Controls.Remove(orderPanel.orderPanel);
+                orderPanel.orderPanel.Dispose();
+            }
+
+            _orderPanelControlsList.Clear();
+            _subtotal.Text = 0.ToString("C", new CultureInfo("en-PH"));
+
+            if (con) { _orderList.Clear(); }
         }
 
 

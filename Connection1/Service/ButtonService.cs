@@ -23,6 +23,7 @@ namespace Connection1.Service
     public interface IImageService
     {
         string GetImagePath(string fileName);
+        string GetGIFPath(string fileName);
     }
 
     public class ButtonService : IButtonService
@@ -54,8 +55,12 @@ namespace Connection1.Service
     {
         public string GetImagePath(string fileName)
         {
-            if (fileName == null) { return "The ImagePath is null";  }
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Images", fileName);
+        }
+
+        public string GetGIFPath(string fileName)
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources", fileName);
         }
     }
 }

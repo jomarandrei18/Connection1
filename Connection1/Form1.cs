@@ -4,6 +4,7 @@ using Connection1.Entities;
 using Connection1.Model;
 using Connection1.Service;
 using Microsoft.Win32;
+using Mysqlx.Crud;
 using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Order = Connection1.Entities.Order;
 
 namespace Connection1
 {
@@ -31,6 +33,7 @@ namespace Connection1
         private ButtonConfig _buttonConfig;
         private MenuValidation validation;
         private CreatePricePanel _createPricePanel;
+        private List<Order> _ordersList;
         
         private Label categName;
         private Label tagLine;
@@ -38,13 +41,19 @@ namespace Connection1
         private Label discSales;
         private Label totalSalesTax;
         private Label total;
+        //private Button btnClear;
+        private Button btnOnHold;
+        private Button btnProceed;
 
         private Panel priceBotPanel;
         private Panel priceTopPanel;
         private OrderList _order;
         private List<OrderList> _orderList;
+        private List<ForOnHoldOrderList> _forOnHoldOrderList;
+
         private int _categY;
         private int mainSize;
+        private string categoryName;
         private string productName;
         private int productId;
         private decimal productPrice;
@@ -64,9 +73,12 @@ namespace Connection1
             _menuCategoryService = menuCategoryService;
 
             _createPricePanel = new CreatePricePanel();
+
+            _forOnHoldOrderList = new List<ForOnHoldOrderList>();
             _order = new OrderList();
             _orderList = new List<OrderList>();
-            validation = new MenuValidation(_orderList);
+            _ordersList = new List<Order>();
+           validation = new MenuValidation(_orderList);
 
             priceBotPanel = _createPricePanel.CreateRoundBotPanel();
             priceTopPanel = _createPricePanel.CreateRoundTopPanel();
@@ -78,7 +90,7 @@ namespace Connection1
             total = _createPricePanel.CreatedRightAlignLabel(17, 27, 35);
 
             _buttonManagerCreation = new ButtonManagerCreation(buttonService, buttonSize);
-            _createPanelOrder = new CreatePanelOrder(_imageService, _orderList, validation, OrderPanel);
+            _createPanelOrder = new CreatePanelOrder(_imageService, _orderList, validation, OrderPanel, subtotal);
             
             AddOrderList.Click += AddOrderList_Click;
 
@@ -107,6 +119,7 @@ namespace Connection1
         private void CreateUIElements()
         {
             InitializeButtonConfig();
+            CreatePricePanelButton();
             SetMainSize();
 
             foreach (var item in _menuCategoryService.GetPagedMenuCategories())
@@ -130,7 +143,9 @@ namespace Connection1
             {
                 Size = new Size(_buttonSize.sizeW, _buttonSize.sizeH)
             };
+
         }
+
         private void ConfigureButton(MenuCategory category)
         {
             _buttonConfig.Text = category.CategName.ToUpper();
@@ -148,7 +163,7 @@ namespace Connection1
             this.Controls.Remove(tagLine);
 
             Button button = (Button)sender;
-            _order.CategName = button.Text;
+            categoryName = button.Text;
             DisplayCategoryDetails(button);
             LoadProductButtons(_buttonManagerCreation.GetDetailsFromButton(button).Id);
         }
@@ -212,9 +227,7 @@ namespace Connection1
         
         private void AddOrderList_Click(object sender, EventArgs e)
         {
-            //Panel lastPanel = OrderPanel.Controls.OfType<Panel>().LastOrDefault();
-
-            var getPanelId = validation.CheckIfExistInList(productName, productPrice, productId, out bool isExist);
+            var getPanelId = validation.CheckIfExistInList(categoryName, productName, productPrice, productId, out bool isExist);
             
             if (isExist)
             {
@@ -224,21 +237,84 @@ namespace Connection1
             {
                 _createPanelOrder.UpdateQuantity(getPanelId);
             }
-            GetPrice();
+
+            subtotal.Text = _createPanelOrder.GetTotalPrice();
         }
 
-        private void GetPrice()
+        private void CreatePricePanelButton()
         {
-            decimal orderTotal = 0;
-            foreach (var order in _orderList)
-            {
-                orderTotal += order.Price * order.Quantity;
-            }
+            //add button in price panel
+            //btnClear = _buttonManagerCreation.RedesignPricePanelButton(_buttonConfig, 90, 24, Color.White, Color.FromArgb(186, 1, 1), "X");
+            btnOnHold = _buttonManagerCreation.RedesignPricePanelButton(_buttonConfig, 151, 130, Color.White, Color.FromArgb(250, 192, 27), "ON HOLD");
+            btnProceed = _buttonManagerCreation.RedesignPricePanelButton(_buttonConfig, 151, 297, Color.White, Color.FromArgb(24, 139, 70), "PROCEED>>");
 
-            subtotal.Text = orderTotal.ToString("C", new CultureInfo("en-PH"));
-            total.Text = orderTotal.ToString("C", new CultureInfo("en-PH"));
+            btnClear.Click += BtnClear_Click;
+            btnProceed.Click += btnProceed_Click;
+            btnOnHold.Click += btnOnHold_Click;
+            btnHold.Click += btnHold_Click;
+
+            //PricePanel.Controls.Add(btnClear);
+            PricePanel.Controls.Add(btnOnHold);
+            PricePanel.Controls.Add(btnProceed);
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e) 
+        {
+            _createPanelOrder.ClearOrderListPanel(true);
+        }
+        private void btnOnHold_Click(object sender, EventArgs e) 
+        {
+            OnHold hold = new OnHold(10, _forOnHoldOrderList, _orderList);
+            hold.ShowDialog();
+
+            if (hold.isClicked)
+            {
+                _orderList = hold._orderlist;
+                _forOnHoldOrderList.Remove(_forOnHoldOrderList.Find(p => p.OnHoldOrderList == _orderList));
+                _createPanelOrder.CreateOrderOnHoldPanel(_orderList);
+            }
             
         }
+
+        private void btnHold_Click(object sender, EventArgs e)
+        {
+            if (_orderList.Count == 0)
+            {
+                return;
+            }
+
+            var _forOnHold = new ForOnHoldOrderList();
+            _forOnHold.Id = _forOnHoldOrderList.Count + 1;
+            _forOnHold.OrderDate = DateTime.Now;
+            _forOnHold.CustomerName = $"Jomar{_forOnHold.Id}";
+            _forOnHold.OnHoldOrderList = new List<OrderList>(_orderList);
+
+            _forOnHoldOrderList.Add(_forOnHold);
+            _createPanelOrder.ClearOrderListPanel(true);
+        }
+        private void btnProceed_Click(object sender, EventArgs e) 
+        {
+            int count = _menuCategoryService.CountOrderToday();
+            foreach (var order in _orderList)
+            {
+                var _orders = new Order();
+
+                _orders.ProductId = order.ProductId;
+                _orders.OrderId = count;
+                _orders.Quantity = order.Quantity;
+                _orders.TotalPrice = order.Quantity * order.Price;
+                _orders.AddedDate = DateTime.Now;
+                _orders.AddedBy = "jomar";
+
+                _ordersList.Add(_orders);
+            }
+            _menuCategoryService.AddMenuCategory(_ordersList);
+            _createPanelOrder.ClearOrderListPanel();
+            //this.Controls.Add(_createPricePanel.CreateCoverPanel(this));
+            CustomMessageBox.Show(_imageService, "Success");
+            
+        }
+
 
     }
 }

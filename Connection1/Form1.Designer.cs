@@ -37,6 +37,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PricePanel = new System.Windows.Forms.Panel();
+            this.btnHold = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.OrderPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +48,7 @@
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PricePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddOrderList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +146,8 @@
             // PricePanel
             // 
             this.PricePanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PricePanel.Controls.Add(this.btnHold);
+            this.PricePanel.Controls.Add(this.btnClear);
             this.PricePanel.Controls.Add(this.label3);
             this.PricePanel.Controls.Add(this.OrderPanel);
             this.PricePanel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -151,11 +156,33 @@
             this.PricePanel.Size = new System.Drawing.Size(480, 1000);
             this.PricePanel.TabIndex = 4;
             // 
+            // btnHold
+            // 
+            this.btnHold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(192)))), ((int)(((byte)(27)))));
+            this.btnHold.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHold.ForeColor = System.Drawing.Color.White;
+            this.btnHold.Location = new System.Drawing.Point(334, 583);
+            this.btnHold.Name = "btnHold";
+            this.btnHold.Size = new System.Drawing.Size(120, 40);
+            this.btnHold.TabIndex = 9;
+            this.btnHold.Text = "HOLD";
+            this.btnHold.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Image = global::Connection1.Properties.Resources.close;
+            this.btnClear.Location = new System.Drawing.Point(415, 22);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(40, 35);
+            this.btnClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClear.TabIndex = 0;
+            this.btnClear.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 17);
+            this.label3.Location = new System.Drawing.Point(24, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 29);
             this.label3.TabIndex = 8;
@@ -164,6 +191,7 @@
             // OrderPanel
             // 
             this.OrderPanel.AutoScroll = true;
+            this.OrderPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OrderPanel.Location = new System.Drawing.Point(19, 45);
             this.OrderPanel.Name = "OrderPanel";
             this.OrderPanel.Size = new System.Drawing.Size(447, 557);
@@ -232,6 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PricePanel.ResumeLayout(false);
             this.PricePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddOrderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,6 +283,8 @@
         private System.Windows.Forms.PictureBox AddOrderList;
         private System.Windows.Forms.Panel OrderPanel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox btnClear;
+        private System.Windows.Forms.Button btnHold;
     }
 }
 

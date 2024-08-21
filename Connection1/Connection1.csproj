@@ -114,8 +114,28 @@
   <ItemGroup>
     <Compile Include="Class\ButtonManagerCreation.cs" />
     <Compile Include="Class\CreatePanelOrder.cs" />
+    <Compile Include="Class\ForOnHoldOrderList.cs" />
     <Compile Include="Class\RoundPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerCoverPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCoverPanel.Designer.cs">
+      <DependentUpon>CustomerCoverPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CustomerOrderList.cs" />
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnHold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnHold.Designer.cs">
+      <DependentUpon>OnHold.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation\MenuValidation.cs" />
     <Compile Include="Connection\ConnDbContext.cs" />
@@ -136,8 +156,17 @@
     <Compile Include="Service\ButtonService.cs" />
     <Compile Include="Service\IMenuCategoryService.cs" />
     <Compile Include="Service\MenuCategoryService.cs" />
+    <EmbeddedResource Include="CustomerCoverPanel.resx">
+      <DependentUpon>CustomerCoverPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnHold.resx">
+      <DependentUpon>OnHold.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +194,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\fast-forward-double-right-arrows-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

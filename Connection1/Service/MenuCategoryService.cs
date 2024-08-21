@@ -32,5 +32,15 @@ namespace Connection1.Service
 
             return query.ToList();
         }
+
+        public void AddMenuCategory(List<Order> orders)
+        {
+            _repository.AddMenuCategory(orders);
+        }
+
+        public int CountOrderToday()
+        {
+            return _repository.CountOrderToday();
+        }
     }
 }

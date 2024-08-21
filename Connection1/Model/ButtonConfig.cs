@@ -14,6 +14,7 @@ namespace Connection1.Model
         public Size Size { get; set; }
         public string Text { get; set; }
         public Font Font { get; set; }
+        public Color BackColor { get; set; } = Color.White;
         public string TagLine { get; set; } = "";
         public int Id { get; set; } = 0;
         public decimal price { get; set; } = 0;
@@ -29,10 +30,11 @@ namespace Connection1.Model
             Size = new Size(163, 56);
             Text = "Hot Sizzling";
             Font = new Font("Book Antiqua", 12, FontStyle.Bold);
+            BackColor = Color.White;
             ImageAlign = ContentAlignment.MiddleLeft;
             TextAlign = ContentAlignment.MiddleCenter;
             TextImageRelation = TextImageRelation.ImageBeforeText;
-            Padding = new Padding(5, 5, 0, 0);
+            //Padding = new Padding(5, 5, 0, 0);
         }
     }
 
@@ -40,20 +42,21 @@ namespace Connection1.Model
     {
         public static Button CreateButton(ButtonConfig config)
         {
-            Button button = new Button
+            return new Button
             {
                 Size = config.Size,
                 Text = config.Text,
                 Font = config.Font,
                 //Image = Image.FromFile(config.ImagePath),
                 ImageAlign = config.ImageAlign,
+                BackColor = config.BackColor,
                 TextAlign = config.TextAlign,
                 TextImageRelation = config.TextImageRelation,
                 Padding = config.Padding,
                 Tag = (config.Id, config.TagLine, config.price)
             };
-            return button;
         }
+
     }
 
     public class ButtonSize

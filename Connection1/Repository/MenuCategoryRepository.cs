@@ -1,7 +1,9 @@
 ﻿using Connection1.Connection;
 using Connection1.Entities;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,24 @@ namespace Connection1.Repository
             var query =  _context.productlist.AsQueryable();
 
             return query.Where(c => c.CategId == Id);
+        }
+
+        public void AddMenuCategory(List<Entities.Order> orders)
+        {
+            foreach (var list in orders)
+            {
+                _context.orders.Add(list);
+                _context.SaveChanges();
+            }
+        }
+
+        public int CountOrderToday()
+        {
+            DateTime today = DateTime.Today;
+            DateTime startOfToday = today;
+            DateTime endOfToday = today.AddDays(1).AddTicks(-1);
+
+            return _context.orders.Where(order => order.AddedDate >= startOfToday && order.AddedDate <= endOfToday).Count() + 1;
         }
     }
 }

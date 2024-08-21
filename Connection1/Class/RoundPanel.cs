@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Connection1.Class
 {
@@ -83,6 +85,63 @@ namespace Connection1.Class
         }
     }
 
+    public class BottomBorderPanel : Panel
+    {
+        private Color _borderColor = Color.Black;
+        private int _borderThickness = 2;
+
+        public Color BorderColor
+        {
+            get => _borderColor;
+            set { _borderColor = value; Invalidate(); }
+        }
+
+        public int BorderThickness
+        {
+            get => _borderThickness;
+            set { _borderThickness = value; Invalidate(); }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            using (var borderPen = new Pen(_borderColor, _borderThickness))
+            {
+                // Draw border at the bottom
+                e.Graphics.DrawLine(borderPen, 0, this.Height - _borderThickness, this.Width, this.Height - _borderThickness);
+            }
+        }
+    }
+
+    public class TransparentPanel : Panel
+    {
+        private float _opacity = 0.5f; // Opacity level (0.0 to 1.0)
+
+        public float Opacity
+        {
+            get => _opacity;
+            set
+            {
+                _opacity = Math.Max(0, Math.Min(1, value)); // Clamp value between 0 and 1
+                Invalidate(); // Redraw the panel
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Create a semi-transparent background brush
+            using (var brush = new SolidBrush(Color.FromArgb((int)(_opacity * 255), BackColor)))
+            {
+                e.Graphics.FillRectangle(brush, ClientRectangle);
+            }
+
+            // Optional: Draw other panel contents or decorations here
+        }
+    }
+
     public class CreatePricePanel
     {
         public RoundBottomPanel CreateRoundBotPanel()
@@ -140,5 +199,16 @@ namespace Connection1.Class
                 Location = new Point(28, pointY)
             };
         }
+
+        public Panel CreateCoverPanel(Form form)
+        {
+            return new Panel
+            {
+                Dock =DockStyle.Fill,
+                Size = new Size(form.Width, form.Height),
+                BackColor = Color.FromArgb(241,241,241)
+            };
+        }
+
     }
 }
