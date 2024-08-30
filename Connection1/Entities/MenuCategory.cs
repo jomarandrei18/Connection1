@@ -15,5 +15,6 @@ namespace Connection1.Entities
         public string TagLine { get; set; }
         public DateTime? AddedDate { get; set; }
         public string CategImagePath { get; set; } = "";
+        public string CategAbb { get; set; }
     }
 }

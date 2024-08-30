@@ -43,26 +43,4 @@ namespace Connection1.Entities
         public virtual MenuCategory Category { get; set; }
     }
 
-    public class OrderList
-    {
-        public int Id { get; set; }
-        public int ProductId { get; set; }
-        public string CategName { get; set; }
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
-    }
-
-    public class OrderPanelControls
-    {
-        public int TagId { get; set; }
-        public Panel orderPanel { get; set; }
-        public System.Windows.Forms.Label productName { get; set; }
-        public System.Windows.Forms.Label productQty { get; set; }
-        public System.Windows.Forms.Label productPrice { get; set; }
-        public System.Windows.Forms.Label deletePanel { get; set; }
-        public PictureBox lessQty { get; set; }
-        public PictureBox addQty { get; set; }
-
-    }
 }

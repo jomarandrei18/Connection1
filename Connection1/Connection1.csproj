@@ -39,6 +39,9 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.24.1.5\lib\net452\DevExpress.Data.v24.1.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -98,6 +101,8 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -115,6 +120,9 @@
     <Compile Include="Class\ButtonManagerCreation.cs" />
     <Compile Include="Class\CreatePanelOrder.cs" />
     <Compile Include="Class\ForOnHoldOrderList.cs" />
+    <Compile Include="Class\MenuButtons.cs" />
+    <Compile Include="Class\OrderList.cs" />
+    <Compile Include="Class\OrderPanelControls.cs" />
     <Compile Include="Class\RoundPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -124,18 +132,37 @@
     <Compile Include="CustomerCoverPanel.Designer.cs">
       <DependentUpon>CustomerCoverPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CustomerOrderList.cs" />
+    <Compile Include="Entities\Order.cs" />
     <Compile Include="CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global\HostCommon.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnHold.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OnHold.Designer.cs">
       <DependentUpon>OnHold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\OrderMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\OrderMenu.Designer.cs">
+      <DependentUpon>OrderMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation\MenuValidation.cs" />
     <Compile Include="Connection\ConnDbContext.cs" />
@@ -165,8 +192,14 @@
     <EmbeddedResource Include="CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnHold.resx">
       <DependentUpon>OnHold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\OrderMenu.resx">
+      <DependentUpon>OrderMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +211,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

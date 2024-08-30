@@ -16,6 +16,7 @@ namespace Connection1.Model
         public Font Font { get; set; }
         public Color BackColor { get; set; } = Color.White;
         public string TagLine { get; set; } = "";
+        public string abbreviation { get; set; } = "";
         public int Id { get; set; } = 0;
         public decimal price { get; set; } = 0;
         public string ImagePath { get; set; }
@@ -53,7 +54,7 @@ namespace Connection1.Model
                 TextAlign = config.TextAlign,
                 TextImageRelation = config.TextImageRelation,
                 Padding = config.Padding,
-                Tag = (config.Id, config.TagLine, config.price)
+                Tag = (config.Id, config.TagLine, config.price, config.abbreviation)
             };
         }
 
@@ -61,8 +62,8 @@ namespace Connection1.Model
 
     public class ButtonSize
     {
-        public int x { get; set; } = 162;
-        public int y { get; set; } = 142;
+        public int x { get; set; } = 45;
+        public int y { get; set; } = 31;
         public int sizeW { get; set; } = 163;
         public int sizeH { get; set; } = 56;
         public bool start { get; set; } = true;

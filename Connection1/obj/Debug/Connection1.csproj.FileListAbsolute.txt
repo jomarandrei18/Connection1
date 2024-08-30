@@ -149,3 +149,7 @@ C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.
 C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.CustomMessageBox.resources
 C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.CustomerCoverPanel.resources
 C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.OnHold.resources
+C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.Sales.resources
+C:\Users\7352710\Documents\GitHub\Connection1\Connection1\bin\Debug\DevExpress.Data.v24.1.dll
+C:\Users\7352710\Documents\GitHub\Connection1\Connection1\bin\Debug\DevExpress.Data.v24.1.xml
+C:\Users\7352710\Documents\GitHub\Connection1\Connection1\obj\Debug\Connection1.OrderMenu.resources

@@ -13,5 +13,6 @@ namespace Connection1.Service
         List<Product> GetProductList(int Id);
         void AddMenuCategory(List<Order> orders);
         int CountOrderToday();
+        IEnumerable<OrderSummary> GetOrder();
     }
 }

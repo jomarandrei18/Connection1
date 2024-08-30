@@ -13,5 +13,7 @@ namespace Connection1.Repository
         IQueryable<Product> GetProduct(int Id);
         void AddMenuCategory(List<Order> orders);
         int CountOrderToday();
+        IQueryable<Entities.Order> GetOrder();
+        IQueryable<Order> GetOrdersByDateRange(DateTime startDate, DateTime endDate);
     }
 }

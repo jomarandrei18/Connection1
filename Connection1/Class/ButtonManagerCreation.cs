@@ -45,7 +45,7 @@ namespace Connection1.Class
             }
 
             PositionButton(button);
-            _currentWindowSize -= _buttonSize.x;
+            _currentWindowSize -= _buttonSize.x + _buttonSize.sizeW;
 
             return button;
         }
@@ -92,9 +92,9 @@ namespace Connection1.Class
             _generatedButtons.Clear();
         }
 
-        public (int Id, string TagLine, decimal Price) GetDetailsFromButton(Button button)
+        public (int Id, string TagLine, decimal Price, string abbreviation) GetDetailsFromButton(Button button)
         {
-            var details = ((int Id, string TagLine, decimal Price))button.Tag;
+            var details = ((int Id, string TagLine, decimal Price, string Abbreviation))button.Tag;
             return details;
         }
 

@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Order = Connection1.Entities.Order;
 
 namespace Connection1.Repository
 {
@@ -48,5 +49,16 @@ namespace Connection1.Repository
 
             return _context.orders.Where(order => order.AddedDate >= startOfToday && order.AddedDate <= endOfToday).Count() + 1;
         }
+        public IQueryable<Order> GetOrder()
+        {
+            return _context.orders;
+        }
+
+        public IQueryable<Order> GetOrdersByDateRange(DateTime startDate, DateTime endDate) 
+        {
+            return _context.orders.Where(o => o.AddedDate >= startDate && o.AddedDate <= endDate);
+        }
+
+
     }
 }
